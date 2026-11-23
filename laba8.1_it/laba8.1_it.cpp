@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int Count(char* str, char c) // кількість символів c у рядку
+int Count(char* str, char c) // кількість символів у рядку
 {
     int k = 0;
     for (int i = 0; str[i] != '\0'; i++)
@@ -14,26 +14,26 @@ int Count(char* str, char c) // кількість символів c у ряд�
 
 char* Change(char* str) // заміна кожного слова "BASIC" на "Delphi"
 {
-    int len = strlen(str);
+    int len = strlen(str); // довжина рядка
 
-    char* tmp = new char[len * 6 / 5 + 1]; // "Delphi" довше за "BASIC" на 1 символ
+    char* tmp = new char[len * 6 / 5 + 1]; // новий рядок під результат , 
     char* t = tmp;
 
-    tmp[0] = '\0';
+    tmp[0] = '\0'; // спочатку результат порожній
 
     int i = 0;
     while (i < len)
     {
         if (str[i] == 'B' && str[i + 1] == 'A' && str[i + 2] == 'S' && str[i + 3] == 'I' && str[i + 4] == 'C')
         {
-            strcat(t, "Delphi");
-            t += 6;
-            i += 5;
+            strcat(t, "Delphi"); // дописуємо delphi 
+            t += 6; // перестрибуємо на 6 букв в новому рядку
+            i += 5; // перестрибуємо на 5 букв в старому рядку
         }
         else
         {
-            *t++ = str[i++];
-            *t = '\0';
+            *t++ = str[i++]; // взяти str[i] зі старого рядка , вставити його в новий рядок на місце t , дальше зсунути i , t на 1 вперед
+            *t = '\0'; // кінець рядка щоб strcat знайшов куди дописувати делфі
         }
     }
 
