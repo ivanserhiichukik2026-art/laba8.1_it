@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int Count(char* str, char c) // кількість символів у рядку
+int Count(char* str, char c) // кількість символів с у рядку
 {
     int k = 0;
     for (int i = 0; str[i] != '\0'; i++)
